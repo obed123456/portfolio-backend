@@ -2,7 +2,7 @@ var express = require("express");
 var mysql   = require("mysql");
 var bodyParser  = require("body-parser");
 var md5 = require('MD5');//hashed password
-var rest = require("./REST.js");
+var rest = require("./rest.js");
 var app  = express();
 
 //this will allow access to all website
