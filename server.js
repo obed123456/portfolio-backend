@@ -28,7 +28,7 @@ REST.prototype.connectMysql = function() {
         connectionLimit : 100,
         host     : 'portfolio1.cqrcxw6v3qag.eu-central-1.rds.amazonaws.com',
         user     : 'admin',
-        password : 'obsam001',
+        password : '123456789',
         database : 'portfolio1',
         debug    :  false
     });
