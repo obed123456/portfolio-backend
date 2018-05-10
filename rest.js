@@ -40,6 +40,19 @@ router.post("/postrating",function(req,res){
     });
 });
 
+//POST comment
+router.post("/addcomment",function(req,res){
+    var query = "INSERT INTO ??(??,??) VALUES (?,?)";
+    var table = ["comment","author", "comment",req.body.author, req.body.comment];
+    query = mysql.format(query,table);
+    connection.query(query,function(err,rows){
+        if(err) {
+            res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+        } else {
+            res.json({"Error" : false, "Message" : "Comment submitted!"});
+        }
+    });
+});
 
 
 }
