@@ -57,12 +57,18 @@ REST.prototype.configureExpress = function(connection) {
 }
 
 //Start server at port 3000
-REST.prototype.startServer = function() {
-      app.listen(3000,function(){
-          console.log("All right ! I am alive at Port 3000.");
-      });
-} 
+// REST.prototype.startServer = function() {
+//       app.listen(3000,function(){
+//           console.log("All right ! I am alive at Port 3000.");
+//       });
+// } 
 
+REST.prototype.startServer = function() {
+    let server = app.listen(process.env.PORT, function () {
+        let port = server.address().port
+        console.log(‘App now running on port’, port)
+    })
+}
 //Error handlar incase mysql is not up and running.
 REST.prototype.stop = function(err) {
     console.log("ISSUE WITH MYSQL n" + err);
