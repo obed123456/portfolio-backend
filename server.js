@@ -66,7 +66,7 @@ REST.prototype.configureExpress = function(connection) {
 REST.prototype.startServer = function() {
     let server = app.listen(process.env.PORT, function () {
         let port = server.address().port
-        console.log(‘App now running on port’, port)
+        console.log('App now running on port', port)
     })
 }
 //Error handlar incase mysql is not up and running.
