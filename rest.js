@@ -43,7 +43,7 @@ router.post("/postrating",function(req,res){
 //POST comment
 router.post("/addcomment",function(req,res){
     var query = "INSERT INTO ??(??,??) VALUES (?,?)";
-    var table = ["comment","author", "comment",req.body.author, req.body.comment];
+    var table = ["comment","author", "message",req.body.author, req.body.message];
     query = mysql.format(query,table);
     connection.query(query,function(err,rows){
         if(err) {
@@ -53,6 +53,19 @@ router.post("/addcomment",function(req,res){
         }
     });
 });
+
+router.get("/getcomment",function(req,res){
+    var query = "SELECT * FROM ??";
+    var table = ["comment"];
+    query = mysql.format(query,table);
+    connection.query(query,function(err,rows){
+        if(err) {
+            res.json({"Error" : true, "Message" : "Error executing MySQL query"});
+        } else {
+            res.json({"Error" : false, "Message" : "Success", rows });
+        }
+    });
+  });
 
 
 }

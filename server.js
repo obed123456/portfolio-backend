@@ -26,10 +26,15 @@ REST.prototype.connectMysql = function() {
     var self = this;
     var pool      =    mysql.createPool({
         connectionLimit : 100,
-        host     : 'portfolio2.cqrcxw6v3qag.eu-central-1.rds.amazonaws.com',
-        user     : 'admin1',
-        password : 'obsam001',
-        database : 'portfolio2',
+        // host     : 'localhost',
+        // user     : 'root',
+        // password : '',
+        // database : 'portfolio',
+        // debug    :  false 
+        host     : 'portfolio.cqrcxw6v3qag.eu-central-1.rds.amazonaws.com',
+        user     : 'admin',
+        password : 'stockholm2018',
+        database : 'portfolio',
         debug    :  false
     });
     pool.getConnection(function(err,connection){
